@@ -1,0 +1,326 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    width: 1200px;
+}
+
+.month {
+    display: grid;
+    grid-template-rows: 130px 1fr;
+    gap: 20pxs;
+}
+
+.days {
+    display: grid;
+    grid-template: repeat(7,1fr) / repeat(7,1fr);
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.days div {
+    text-align: center;
+    line-height: 60px;
+    color: black;
+    width: 40px;
+    height: 60px;
+    display: flex;
+}
+
+h1 {
+text-align: center;
+font-size: 10em;
+margin: 0;
+}
+
+.month h2 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    line-height: 100px;
+    height: 100px;
+    border-radius: 5px;
+    font-size: 3em;
+}
+
+
+
+/* Zilele saptaminii */
+
+.days div:nth-child(1)::before {
+    content: "L";
+    flex: 1;
+}
+.days div:nth-child(2):before {
+    content: "M";
+    flex: 1;
+}
+.days div:nth-child(3):before {
+    content: "Mi";
+    flex: 1;
+}
+.days div:nth-child(4):before {
+    content: "J";
+    flex: 1;
+}
+.days div:nth-child(5):before {
+    content: "V";
+    flex: 1;
+}
+.days div:nth-child(6):before {
+    content: "S";
+    flex: 1;
+}
+.days div:nth-child(7):before {
+    content: "D";
+    flex: 1;
+}
+
+/* Cifrele in fiecare luna */
+
+.ianuarie {
+    counter-set: counter1 counter2 counter3;
+}
+
+.ianuarie div:nth-child(n+8):nth-child(-n+38):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    background-color: lightgray;
+}
+.ianuarie div:nth-child(n+39):nth-child(-n+42):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.februarie {
+    counter-set: counter1 28 counter2 counter3;
+}
+.februarie div:nth-child(n+8):nth-child(-n+10):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.februarie div:nth-child(n+11):nth-child(-n+39):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.februarie div:nth-child(n+40):nth-child(-n+42):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.martie {
+    counter-set: counter1 25 counter2 counter3;
+}
+.martie div:nth-child(n+8):nth-child(-n+11):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.martie div:nth-child(n+12):nth-child(-n+42):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+
+.aprilie {
+    counter-set: counter1 counter2 counter3;
+}
+.aprilie div:nth-child(n+8):nth-child(-n+37):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    background-color: lightgray;
+}
+.aprilie div:nth-child(n+38):nth-child(-n+42):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.mai {
+    counter-set: counter1 28 counter2 counter3;
+}
+.mai div:nth-child(n+8):nth-child(-n+9):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.mai div:nth-child(n+10):nth-child(-n+40):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.mai div:nth-child(n+41):nth-child(-n+42):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.iunie {
+    counter-set: counter1 26 counter2 counter3;
+}
+.iunie div:nth-child(n+8):nth-child(-n+12):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.iunie div:nth-child(n+13):nth-child(-n+42):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+
+
+.iulie {
+    counter-set: counter1 counter2 counter3;
+}
+.iulie div:nth-child(n+8):nth-child(-n+38):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    background-color: lightgray;
+}
+.iulie div:nth-child(n+39):nth-child(-n+42):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.august {
+    counter-set: counter1 28 counter2 counter3;
+}
+.august div:nth-child(n+8):nth-child(-n+10):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.august div:nth-child(n+11):nth-child(-n+41):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.august div:nth-child(n+42):nth-child(-n+42):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.septembrie {
+    counter-set: counter1 25 counter2 counter3;
+}
+.septembrie div:nth-child(n+8):nth-child(-n+13):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.septembrie div:nth-child(n+14):nth-child(-n+43):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.septembrie div:nth-child(n+44):nth-child(-n+49):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.octombrie {
+    counter-set: counter1 29 counter2 counter3;
+}
+.octombrie div:nth-child(n+8):nth-child(-n+8):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.octombrie div:nth-child(n+9):nth-child(-n+39):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.octombrie div:nth-child(n+40):nth-child(-n+42):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.noiembrie {
+    counter-set: counter1 27 counter2 counter3;
+}
+.noiembrie div:nth-child(n+8):nth-child(-n+11):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.noiembrie div:nth-child(n+12):nth-child(-n+41):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.noiembrie div:nth-child(n+42):nth-child(-n+42):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
+.decembrie {
+    counter-set: counter1 24 counter2 counter3;
+}
+.decembrie div:nth-child(n+8):nth-child(-n+13):before {
+    counter-increment: counter1;
+    content: counter(counter1);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+.decembrie div:nth-child(n+14):nth-child(-n+44):before {
+    counter-increment: counter2;
+    content: counter(counter2);
+    flex: 1;
+    background-color: lightgray;
+}
+.decembrie div:nth-child(n+45):nth-child(-n+49):before {
+    counter-increment: counter3;
+    content: counter(counter3);
+    flex: 1;
+    border: solid lightgray 1px;
+}
+
